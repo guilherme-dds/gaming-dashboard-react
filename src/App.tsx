@@ -1,12 +1,9 @@
-import { useState } from "react";
 import "./App.css";
 import "primeicons/primeicons.css";
 import GamesPreview from "./components/games";
 import SocialPreview from "./components/social";
 
 function App() {
-  const [count, setCount] = useState(0);
-
   return (
     <>
       <div className="flex flex-row">

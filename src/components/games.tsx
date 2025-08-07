@@ -1,5 +1,53 @@
 import "../App.css";
 import "primeicons/primeicons.css";
+import PopularCard from "./popularCard";
+import RecentlyCard from "./RecentlyPlayed";
+
+const games = [
+  {
+    name: "Expedition 33",
+    price: "R$ 179,99",
+    imageUrl: "src/assets/img/expedition-cover.jpg",
+  },
+  {
+    name: "The Alters",
+    price: "199,90",
+    imageUrl: "src/assets/img/thealters-cover.jpg",
+  },
+  {
+    name: "Fortnite",
+    price: "Gratuito",
+    imageUrl: "src/assets/img/fortnite-cover.jpg",
+  },
+  {
+    name: "Spider-Man",
+    price: "299,90",
+    imageUrl: "src/assets/img/miles-cover.jpg",
+  },
+  {
+    name: "Watch Dogs Legion",
+    price: "R$ 199,90",
+    imageUrl: "src/assets/img/watchdogs-cover.jpg",
+  },
+];
+
+const RecentlyPlayed = [
+  {
+    imageUrl: "src/assets/img/expedition-cover.jpg",
+    name: "Clair Obscur: Expedition 33",
+    timePlayed: 27,
+  },
+  {
+    imageUrl: "src/assets/img/spiderman-cover.jpg",
+    name: "Marvel's Spider-Man Remastered",
+    timePlayed: 19,
+  },
+  {
+    imageUrl: "src/assets/img/watchdogs-cover.jpg",
+    name: "Watch Dogs Legion",
+    timePlayed: 12,
+  },
+];
 
 const GamesPreview = () => {
   return (
@@ -30,38 +78,27 @@ const GamesPreview = () => {
             <h1 className="font-[poppins] font-semibold text-lg">
               Jogados Recentementes
             </h1>
-            <div className="2xl:w-140 2xl:h-19 xl:w-90 xl:h-12 bg-[#00453F] rounded-2xl"></div>
-            <div className="2xl:w-140 2xl:h-19 xl:w-90 xl:h-12 bg-[#00453F] rounded-2xl"></div>
-            <div className="2xl:w-140 2xl:h-19 xl:w-90 xl:h-12 bg-[#00453F] rounded-2xl"></div>
+            {RecentlyPlayed.map((games, index) => (
+              <RecentlyCard
+                key={index}
+                imageUrl={games.imageUrl}
+                name={games.name}
+                timePlayed={games.timePlayed}
+              />
+            ))}
           </div>
         </div>
         <div className="flex flex-col 2xl:gap-7 xl:gap-4">
           <h1 className="font-[poppins] font-semibold text-lg">Populares</h1>
           <div className="flex flex-row justify-between">
-            <div className="relative 2xl:w-60 2xl:h-80 xl:w-36 xl:h-48 rounded-4xl transition delay-150 duration-300 ease-in-out hover:-translate-y-1 hover:-rotate-4 hover:scale-104">
-              <img
-                src="src/assets/img/expedition-cover.jpg"
-                className="absolute rounded-4xl opacity-40"
-              ></img>
-              <h2 className="absolute font-[poppins] font-bold 2xl:text-lg xl:text-sm 2xl:bottom-20 2xl:pl-7 2xl:pr-7 xl:bottom-14 xl:pl-4 xl:pr-2">
-                Expedition 33
-              </h2>
-              <div className="absolute flex flex-row gap-2 items-center 2xl:bottom-12 2xl:pl-7 2xl:pr-7 xl:bottom-7 xl:pl-4 xl:pr-2">
-                <h2 className="font-[poppins] font-medium 2xl:text-lg xl:text-sm">
-                  R$ 179,99
-                </h2>
-                <i className="pi pi-plus-circle 2xl:text-1xl xl:text-sm"></i>
-              </div>
-            </div>
-            <div className="2xl:w-60 2xl:h-80 xl:w-36 xl:h-48 rounded-4xl">
-              <img
-                src="src/assets/img/thealters-cover.jpg"
-                className="rounded-4xl opacity-40"
-              ></img>
-            </div>
-            <div className="2xl:w-60 2xl:h-80 xl:w-36 xl:h-48 bg-[#00453F] rounded-4xl"></div>
-            <div className="2xl:w-60 2xl:h-80 xl:w-36 xl:h-48 bg-[#00453F] rounded-4xl"></div>
-            <div className="2xl:w-60 2xl:h-80 xl:w-36 xl:h-48 bg-[#00453F] rounded-4xl"></div>
+            {games.map((games, index) => (
+              <PopularCard
+                key={index}
+                name={games.name}
+                price={games.price}
+                imageUrl={games.imageUrl}
+              />
+            ))}
           </div>
         </div>
       </div>
