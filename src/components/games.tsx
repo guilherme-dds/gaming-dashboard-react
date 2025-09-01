@@ -1,6 +1,6 @@
 import "../App.css";
 import "primeicons/primeicons.css";
-import PopularCard from "./popularCard";
+import PopularCard from "./PopularCard";
 import RecentlyCard from "./RecentlyPlayed";
 
 const games = [
@@ -68,7 +68,7 @@ const GamesPreview = () => {
                 src="src/assets/img/cyberpunk-logo.png"
                 className="2xl:h-20 xl:h-11"
               ></img>
-              <button className="bg-white w-40 h-10 rounded-2xl shadow-lg shadow-[#000000] text-[#232323] font-[poppins] font-medium cursor-pointer flex flex-row items-center justify-center gap-2">
+              <button className="bg-white 2xl:w-40 2xl:h-10 xl:w-30 xl:h-7 rounded-2xl shadow-lg shadow-[#000000] 2xl:text-base xl:text-xs text-[#232323] font-[poppins] font-medium cursor-pointer flex flex-row items-center justify-center gap-2">
                 Saiba mais{" "}
                 <i className="pi pi-plus-circle 2xl:text-1xl xl:text-sm"></i>
               </button>

@@ -9,7 +9,7 @@ function App() {
       <div className="flex flex-row">
         {/* Menu lateral */}
         <div className="flex items-center h-screen ml-10">
-          <div className="bg-[#00453F] xl:h-140 2xl:h-220 xl:w-22 2xl:w-27 rounded-[45px] shadow-lg shadow-[#00000010]">
+          <div className="bg-[#00453F] xl:h-150 2xl:h-220 xl:w-22 2xl:w-27 rounded-4xl shadow-lg shadow-[#00000010]">
             <div className="flex flex-col items-center justify-center gap-30">
               <img src="src/assets/img/logo.png" className="mt-7 h-9"></img>
               <div className="flex flex-col justify-between gap-7">
